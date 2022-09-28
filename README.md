@@ -1,8 +1,10 @@
 # Vacation Analysis
 
 This is a school project that consists of analyzing the vacation habits of young people.  
+
 The data was collected through a Google Forms survey and the raw data (stripped of personal email addresses) is available in the [data.csv](data.csv) file.  
-The survey results are also available in a Google Forms-like format in the [Google Forms Survey Results.html](Google%20Forms%20Survey%20Results.html) file. 
+The survey results are also available in a Google Forms-like format in the [Google Forms Survey Results.html](Google%20Forms%20Survey%20Results.html) file.  
+The survey questions are available in a Google Forms-like format in the [Google Forms Survey Questions.html](Google%20Forms%20Survey%20Questions.html) file.
 
 The analysis was conducted using Python and the Pandas library inside a Jupyter Notebook. The notebook with the code is available in the [analyze.ipynb](analyze.ipynb) file.
 
