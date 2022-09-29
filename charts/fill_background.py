@@ -1,5 +1,5 @@
 from typing import List
-import cv2
+from PIL import Image
 import os
 
 
@@ -13,15 +13,42 @@ def get_all_charts() -> List[str]:
 
 def fill_background(chart: str) -> None:
     # Fill the transparent background with blue
-    im = cv2.imread(chart, cv2.IMREAD_UNCHANGED)
 
-    for i in range(im.shape[0]):
-        for j in range(im.shape[1]):
-            if tuple(im[i, j]) == tuple([0, 0, 0, 0]):
-                im[i, j] = [70, 0, 0, 255]
+    im = Image.open(chart)
 
-    # Save the image with alpha channel
-    cv2.imwrite(chart, im, [cv2.IMWRITE_PNG_COMPRESSION, 0])
+    for x in range(im.width):
+        for y in range(im.height):
+            pixel = im.getpixel((x, y))
+
+            # If pixel is transparent and black, fill with blue
+            if pixel == (0, 0, 0, 0):
+                im.putpixel((x, y), (0, 0, 70, 255))
+            
+            # If pixel is white and somewhat transparent
+            elif pixel[:3] == (255, 255, 255):
+                alpha = pixel[3]
+
+                if alpha > 150:
+                    im.putpixel((x, y), (255, 255, 255, 255))
+
+                elif alpha > 110:
+                    im.putpixel((x, y), (0, 0, 70, 255 - pixel[3]))
+
+                else:
+                    im.putpixel((x, y), (0, 0, 70, 255))
+            
+
+    im.save(chart, format='png')
+
+    # im = cv2.imread(chart, cv2.IMREAD_UNCHANGED)
+
+    # for i in range(im.shape[0]):
+    #     for j in range(im.shape[1]):
+    #         if tuple(im[i, j]) == tuple([0, 0, 0, 0]):
+    #             im[i, j] = [70, 0, 0, 255]
+
+    # # Save the image with alpha channel
+    # cv2.imwrite(chart, im, [cv2.IMWRITE_PNG_COMPRESSION, 0])
 
 
 def main() -> None:
