@@ -8,7 +8,7 @@ The survey questions are available in a Google Forms-like format in the [Google 
 
 The analysis was conducted using Python and the Pandas library inside a Jupyter Notebook. The notebook with the code is available in the [analyze.ipynb](analyze.ipynb) file.
 
-Unfortunately, the graphic part of project was meant to be done in Italian, so the following charts are in Italian.  
+Unfortunately, the graphic part of project was meant to be done in Italian, so the following charts are in Italian. I translated the chart titles so that you can get the gist of what they are about.  
 These charts are in no particular order.
 
 <br>
@@ -34,7 +34,7 @@ These charts are in no particular order.
 ### Where are people from?
 ![](charts/Continente%20di%20provenienza%20dei%20partecipanti.png)
 
-#### Vacation enjoyment based on age range
+### Vacation enjoyment based on age range
 ![](charts/Divertimento%20in%20base%20all'et%C3%A0.png)
 
 ### Age of the respondents
