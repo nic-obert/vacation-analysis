@@ -18,9 +18,10 @@ def fill_background(chart: str) -> None:
     for i in range(im.shape[0]):
         for j in range(im.shape[1]):
             if tuple(im[i, j]) == tuple([0, 0, 0, 0]):
-                im[i, j] = [100, 0, 0, 255]
+                im[i, j] = [70, 0, 0, 255]
 
-    cv2.imwrite(chart, im)
+    # Save the image with alpha channel
+    cv2.imwrite(chart, im, [cv2.IMWRITE_PNG_COMPRESSION, 0])
 
 
 def main() -> None:
