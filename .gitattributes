@@ -1,2 +1,2 @@
 *.html -linguist-detectable
-*.ipnb linguist-language=Python
+*.ipynb linguist-language=Python
